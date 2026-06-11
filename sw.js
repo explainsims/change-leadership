@@ -1,11 +1,11 @@
 /* CHanGE service worker — precache the app shell for instant, offline launch. */
-const CACHE = "change-v1";
+const CACHE = "change-v2";
 const SHELL = [
   ".",
   "index.html",
-  "styles.css",
-  "app.js",
-  "documents.js",
+  "styles.css?v=2",
+  "app.js?v=2",
+  "documents.js?v=2",
   "manifest.webmanifest",
   "icons/favicon.svg",
   "icons/icon-192.png",

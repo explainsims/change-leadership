@@ -12,7 +12,23 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <meta name="apple-mobile-web-app-title" content="CHanGE" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=2" />
+  <script>
+    // Surface any script error on the page instead of failing to a blank screen.
+    window.addEventListener("error", function (e) {
+      var box = document.getElementById("diag");
+      if (!box) {
+        box = document.createElement("pre");
+        box.id = "diag";
+        box.style.cssText =
+          "white-space:pre-wrap;color:#ff6b00;background:#1c1c20;border:1px solid #ff6b00;" +
+          "border-radius:12px;margin:20px;padding:16px;font:13px/1.5 ui-monospace,monospace;max-width:880px;";
+        (document.body || document.documentElement).appendChild(box);
+      }
+      var where = e.filename ? "  @ " + e.filename.split("/").pop() + ":" + e.lineno : "";
+      box.textContent += (e.message || String(e.error) || "Script error") + where + "\n";
+    });
+  </script>
 </head>
 <body>
   <header class="app-header">
@@ -34,7 +50,7 @@
     <p>The CHanGE operating system · on-call reference</p>
   </footer>
 
-  <script src="documents.js"></script>
-  <script src="app.js"></script>
+  <script src="documents.js?v=2"></script>
+  <script src="app.js?v=2"></script>
 </body>
 </html>
