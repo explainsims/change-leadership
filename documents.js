@@ -8,7 +8,10 @@
  *   type: "doc" (Google Doc) | "canva" | "web" | "note" (concept, no link)
  *   url is optional — omit it for reference-only "note" cards.
  */
-const CHANGE_DATA = {
+// Attach to window so app.js can read it. A top-level `const` in a classic
+// <script> is NOT exposed as a window property, so we assign it explicitly —
+// otherwise app.js reads window.CHANGE_DATA as undefined and throws.
+window.CHANGE_DATA = {
   brand: {
     name: "CHanGE",
     owner: "Nick Haywood",
