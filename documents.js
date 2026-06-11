@@ -7,10 +7,11 @@
  *   { title, summary, url, type }
  *   type: "doc" (Google Doc) | "canva" | "web" | "note" (concept, no link)
  *   url is optional — omit it for reference-only "note" cards.
+ *
+ * Note: a top-level `const` in a classic <script> is NOT exposed as a window
+ * property, so we assign to window.CHANGE_DATA explicitly — otherwise app.js
+ * reads it as undefined and throws.
  */
-// Attach to window so app.js can read it. A top-level `const` in a classic
-// <script> is NOT exposed as a window property, so we assign it explicitly —
-// otherwise app.js reads window.CHANGE_DATA as undefined and throws.
 window.CHANGE_DATA = {
   brand: {
     name: "CHanGE",
@@ -33,7 +34,7 @@ window.CHANGE_DATA = {
       kicker: "The daily infrastructure",
       desc: "Systemic micro-routines that automate focus, recovery and time — the invisible tracks your days run on.",
       items: [
-        { title: "Sleep · 10/3/2/1/0", type: "web",
+        { title: "10/3/2/1/0", type: "web",
           url: "https://healthhub.hif.com.au/sleep-hygiene/what-is-the-10-3-2-1-0-sleep-rule",
           summary: "10 hrs no caffeine · 3 no food · 2 no work · 1 no screens · 0 snoozes." },
         { title: "8 before 8", type: "note",
@@ -43,9 +44,15 @@ window.CHANGE_DATA = {
         { title: "168", type: "doc",
           url: "https://docs.google.com/document/d/1D5VtQdEL5QcLMpU56P3kDBxKOYh8GLf_ixQdxxNZCDY/edit",
           summary: "Audit where your 168 hours each week actually go." },
-        { title: "Eisenhower Matrix", type: "doc",
+        { title: "Eisenhower", type: "doc",
           url: "https://docs.google.com/document/d/1COL7CWX_mE14_Z8SRomSJPJ5Ie6UoRHi/edit",
           summary: "Sort urgent vs important to protect your bandwidth." },
+        { title: "HHH/SSS", type: "doc",
+          url: "https://docs.google.com/document/d/1TZ5spdUC4CqAdazxxeXTxyy3FXSYfsCXQBqt-neMMs4/edit?tab=t.0",
+          summary: "Daily non-negotiables checklist." },
+        { title: "7/38/55", type: "doc",
+          url: "https://docs.google.com/document/d/1TZ5spdUC4CqAdazxxeXTxyy3FXSYfsCXQBqt-neMMs4/edit?tab=t.0",
+          summary: "Communication: 7% words · 38% tone · 55% body language." },
       ],
     },
     {
@@ -61,9 +68,18 @@ window.CHANGE_DATA = {
         { title: "COD", type: "doc",
           url: "https://docs.google.com/document/d/1out-buPuFf-R4BG03dOSJ-eHOMPNUmt-/edit",
           summary: "Clarity of Direction — align action to one clear line." },
-        { title: "Difficult Conversations", type: "doc",
+        { title: "Tough Convos", type: "doc",
           url: "https://docs.google.com/document/d/14IJxlUIYTjXbZ6G6pgiOKNaiH5GxHnftZON4KkmWOBo/edit",
           summary: "Frameworks for friction-filled, face-to-face feedback." },
+        { title: "Glue Guys", type: "doc",
+          url: "https://docs.google.com/document/d/1XftsLsdB6seBqeacmWjJActzAXsnJM1KdQ2r4z5t9gM/edit?tab=t.0",
+          summary: "The connectors who hold a team together." },
+        { title: "Hairy Yellow", type: "canva",
+          url: "https://www.canva.com/design/DAG7KUV8HYM/VDJKqBH8u_tsm8u69qZbuw/edit",
+          summary: "Visual behaviour prompt." },
+        { title: "Time & Space", type: "doc",
+          url: "https://docs.google.com/document/d/1TZ5spdUC4CqAdazxxeXTxyy3FXSYfsCXQBqt-neMMs4/edit?tab=t.0",
+          summary: "Give people the time and space to respond well." },
       ],
     },
     {
@@ -85,9 +101,18 @@ window.CHANGE_DATA = {
         { title: "Huddle Session", type: "canva",
           url: "https://www.canva.com/design/DAGvj6FiOxo/GoCkQmPMc7BJG3Aa4CVd1g/edit",
           summary: "Rapid standing huddle to align and share strategy." },
-        { title: "Ideas", type: "doc",
+        { title: "Ideas 1.5", type: "doc",
           url: "https://docs.google.com/document/d/169hGU7FeY2NSu6Wrpm4g0rsQY6mpqEcsUvczRk_3vTs/edit",
           summary: "Running idea bank for sessions and activities." },
+        { title: "Broccoli x Cauliflower", type: "doc",
+          url: "https://docs.google.com/document/d/1hjliJHyXvPbTG4Cjhp1uhm3mcXDsfQi6FNCyaXyupYk/edit?tab=t.0",
+          summary: "Two things that look alike but aren't — a culture metaphor." },
+        { title: "OG Ideas", type: "doc",
+          url: "https://docs.google.com/document/d/1lmgNMAvyvxZfZ8meFAzBRnasngBM8rUg/edit",
+          summary: "The original bank of connection and energiser games." },
+        { title: "CHanGe 2.0", type: "doc",
+          url: "https://docs.google.com/document/d/1SRKR1Bob2xhxcZuE4DyfIDu88wrw8me7eCagxK7SVxk/edit?tab=t.0",
+          summary: "The evolved CHanGE framework." },
       ],
     },
     {
@@ -97,35 +122,19 @@ window.CHANGE_DATA = {
       kicker: "The manifestation",
       desc: "The natural consequence of the pipeline — you don't chase results, you execute the habits and behaviours that make them inevitable.",
       items: [
-        { title: "Productivity Mapping", type: "note",
-          summary: "Productivity matches the clarity of direction." },
-        { title: "Hats, Haircuts & Tattoos", type: "note",
-          summary: "Decision triage: reversible · semi-permanent · permanent." },
-        { title: "Not an Emergency", type: "note",
-          summary: "De-escalate stress so executive function keeps firing." },
-        { title: "Focus / Next Play", type: "note",
-          summary: "Immediate psychological reset after a mistake." },
-        { title: "Just Hands", type: "doc",
-          url: "https://docs.google.com/document/d/1lmgNMAvyvxZfZ8meFAzBRnasngBM8rUg/edit",
-          summary: "A deep bank of hands-only connection and energiser games." },
+        { title: "Feedback LOOP", type: "doc",
+          url: "https://docs.google.com/document/d/18UWbYYUdsnaNjJlITic0j7e2JJMAmhcn9sSIiHrkixY/edit?tab=t.0",
+          summary: "Closing the feedback loop." },
+        { title: "Meeting", type: "doc",
+          url: "https://docs.google.com/document/d/1toak6LfJmiA_2avlzh-wovc249cSyjCVWwfaxYUb80U/edit",
+          summary: "Running effective meetings." },
+        { title: "Homebase", type: "doc",
+          url: "https://docs.google.com/document/d/1SRKR1Bob2xhxcZuE4DyfIDu88wrw8me7eCagxK7SVxk/edit?tab=t.0",
+          summary: "Your central CHanGE reference point." },
       ],
     },
   ],
 
-  // Links present in the source PDF but not named in the master framework.
-  // Labelled generically — rename or remove these as needed.
-  extras: [
-    { title: "Canva resource", type: "canva",
-      url: "https://www.canva.com/design/DAG7KUV8HYM/VDJKqBH8u_tsm8u69qZbuw/edit",
-      summary: "Additional Canva design (unlabelled)." },
-    { title: "Document", type: "doc",
-      url: "https://docs.google.com/document/d/1XftsLsdB6seBqeacmWjJActzAXsnJM1KdQ2r4z5t9gM/edit",
-      summary: "Additional document (unlabelled)." },
-    { title: "Document", type: "doc",
-      url: "https://docs.google.com/document/d/1toak6LfJmiA_2avlzh-wovc249cSyjCVWwfaxYUb80U/edit",
-      summary: "Additional document (unlabelled)." },
-    { title: "Document", type: "doc",
-      url: "https://docs.google.com/document/d/18UWbYYUdsnaNjJlITic0j7e2JJMAmhcn9sSIiHrkixY/edit",
-      summary: "Additional document (unlabelled)." },
-  ],
+  // No unsorted extras.
+  extras: [],
 };

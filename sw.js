@@ -1,17 +1,17 @@
 /* CHanGE service worker — precache the app shell for instant, offline launch. */
-const CACHE = "change-v2";
+const CACHE = "change-v3";
 const SHELL = [
   ".",
   "index.html",
-  "styles.css?v=2",
-  "app.js?v=2",
-  "documents.js?v=2",
+  "styles.css?v=3",
+  "app.js?v=3",
+  "documents.js?v=3",
   "manifest.webmanifest",
-  "icons/favicon.svg",
-  "icons/icon-192.png",
-  "icons/icon-512.png",
-  "icons/icon-maskable-512.png",
-  "icons/icon-180.png",
+  "icons/favicon.svg?v=3",
+  "icons/icon-192.png?v=3",
+  "icons/icon-512.png?v=3",
+  "icons/icon-maskable-512.png?v=3",
+  "icons/icon-180.png?v=3",
 ];
 
 self.addEventListener("install", (e) => {
