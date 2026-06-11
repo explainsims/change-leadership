@@ -14,14 +14,14 @@
  */
 window.CHANGE_DATA = {
   brand: {
-    name: "CHanGE",
+    name: "CHanGe",
     owner: "Nick Haywood",
     tagline: "Habits → Behaviours → Culture → Results",
   },
 
   // The master framework document (overview of the whole system).
   framework: {
-    title: "The CHanGE Framework",
+    title: "The CHanGe Framework",
     summary: "Habits drive Behaviours, Behaviours create Culture, Culture generates Results. The full operating system in one document.",
     url: "https://docs.google.com/document/d/1SRKR1Bob2xhxcZuE4DyfIDu88wrw8me7eCagxK7SVxk/edit",
   },
@@ -112,7 +112,7 @@ window.CHANGE_DATA = {
           summary: "The original bank of connection and energiser games." },
         { title: "CHanGe 2.0", type: "doc",
           url: "https://docs.google.com/document/d/1SRKR1Bob2xhxcZuE4DyfIDu88wrw8me7eCagxK7SVxk/edit?tab=t.0",
-          summary: "The evolved CHanGE framework." },
+          summary: "The evolved CHanGe framework." },
       ],
     },
     {
@@ -130,7 +130,7 @@ window.CHANGE_DATA = {
           summary: "Running effective meetings." },
         { title: "Homebase", type: "doc",
           url: "https://docs.google.com/document/d/1SRKR1Bob2xhxcZuE4DyfIDu88wrw8me7eCagxK7SVxk/edit?tab=t.0",
-          summary: "Your central CHanGE reference point." },
+          summary: "Your central CHanGe reference point." },
       ],
     },
   ],
